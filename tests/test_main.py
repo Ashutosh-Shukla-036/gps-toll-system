@@ -8,13 +8,14 @@ class TestDijkstra(unittest.TestCase):
 
         # Define the expected paths and cost based on the graph structure
         expected_paths = [
-            ['A', 'C', 'F', 'G', 'I', 'O'],
-            ['A', 'E', 'F', 'G', 'I', 'O']
+            ['Mumbai', 'Bangalore', 'Chennai', 'Kanpur', 'Nagpur', 'Bhopal'],
+            ['Mumbai', 'Delhi', 'Chennai', 'Kanpur', 'Nagpur', 'Bhopal'],
+            ['Mumbai', 'Ahmedabad', 'Chennai', 'Kolkata', 'Pune', 'Bhopal']
         ]
         expected_cost = 17  # Adjusted based on your graph weights
 
         # Run Dijkstra's algorithm
-        path, cost = dijkstra(G, 'A', 'O')
+        path, cost = dijkstra(G, 'Mumbai', 'Bhopal')
 
         # Assert the cost
         self.assertEqual(cost, expected_cost, f"Expected cost: {expected_cost}, but got: {cost}")
