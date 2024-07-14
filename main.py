@@ -24,43 +24,43 @@ red = (255, 0, 0)
 
 # Positions for points (for demonstration purposes)
 positions = {
-    'A': (100, 100),
-    'B': (300, 100),
-    'C': (200, 200),
-    'D': (400, 200),
-    'E': (100, 300),
-    'F': (300, 300),
-    'G': (500, 300),
-    'H': (200, 400),
-    'I': (400, 400),
-    'J': (600, 400),
-    'K': (100, 500),
-    'L': (300, 500),
-    'M': (500, 500),
-    'N': (200, 600),
-    'O': (400, 600)
+    'Mumbai': (100, 100),
+    'Delhi': (300, 100),
+    'Bangalore': (200, 200),
+    'Hyderabad': (400, 200),
+    'Ahmedabad': (100, 300),
+    'Chennai': (300, 300),
+    'Kolkata': (500, 300),
+    'Surat': (200, 400),
+    'Pune': (400, 400),
+    'Jaipur': (600, 400),
+    'Lucknow': (100, 500),
+    'Kanpur': (300, 500),
+    'Nagpur': (500, 500),
+    'Indore': (200, 600),
+    'Bhopal': (400, 600)
 }
 
 # Vehicle properties for Pygame
 vehicle_radius = 10
 
 def create_graph():
-    """Create a graph with 15 nodes and predefined edges."""
+    """Create a graph with nodes representing Indian cities and predefined edges."""
     G = nx.Graph()
     edges = [
-        ('A', 'B', {'weight': 4}), ('A', 'E', {'weight': 5}), ('A', 'C', {'weight': 6}),
-        ('B', 'C', {'weight': 2}), ('B', 'F', {'weight': 5}),
-        ('C', 'D', {'weight': 3}), ('C', 'F', {'weight': 1}),
-        ('D', 'G', {'weight': 3}), ('D', 'I', {'weight': 5}),
-        ('E', 'F', {'weight': 2}), ('E', 'H', {'weight': 4}),
-        ('F', 'G', {'weight': 2}), ('F', 'L', {'weight': 5}),
-        ('G', 'I', {'weight': 2}), ('G', 'M', {'weight': 4}),
-        ('H', 'K', {'weight': 3}), ('H', 'N', {'weight': 5}),
-        ('I', 'J', {'weight': 4}), ('I', 'O', {'weight': 6}),
-        ('J', 'O', {'weight': 5}),
-        ('K', 'L', {'weight': 2}),
-        ('L', 'M', {'weight': 3}),
-        ('N', 'O', {'weight': 4})
+        ('Mumbai', 'Delhi', {'weight': 4}), ('Mumbai', 'Ahmedabad', {'weight': 5}), ('Mumbai', 'Bangalore', {'weight': 6}),
+        ('Delhi', 'Bangalore', {'weight': 2}), ('Delhi', 'Chennai', {'weight': 5}),
+        ('Bangalore', 'Hyderabad', {'weight': 3}), ('Bangalore', 'Chennai', {'weight': 1}),
+        ('Hyderabad', 'Kolkata', {'weight': 3}), ('Hyderabad', 'Pune', {'weight': 5}),
+        ('Ahmedabad', 'Chennai', {'weight': 2}), ('Ahmedabad', 'Surat', {'weight': 4}),
+        ('Chennai', 'Kolkata', {'weight': 2}), ('Chennai', 'Kanpur', {'weight': 5}),
+        ('Kolkata', 'Pune', {'weight': 2}), ('Kolkata', 'Nagpur', {'weight': 4}),
+        ('Surat', 'Lucknow', {'weight': 3}), ('Surat', 'Indore', {'weight': 5}),
+        ('Pune', 'Jaipur', {'weight': 4}), ('Pune', 'Bhopal', {'weight': 6}),
+        ('Jaipur', 'Bhopal', {'weight': 5}),
+        ('Lucknow', 'Kanpur', {'weight': 2}),
+        ('Kanpur', 'Nagpur', {'weight': 3}),
+        ('Indore', 'Bhopal', {'weight': 4})
     ]
     G.add_edges_from(edges)
     return G
