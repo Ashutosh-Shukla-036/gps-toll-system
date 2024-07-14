@@ -1,0 +1,45 @@
+Finding the Shortest Path:
+
+Dijkstra’s Algorithm: This algorithm is used to find the shortest path between two nodes in a graph. It calculates the minimum distance from the start node to the end node by exploring all possible paths and selecting the one with the smallest cumulative weight (distance).
+
+Calculating the Total Distance:
+
+Once the shortest path is determined, the total distance is calculated by summing the weights of the edges along this path. Each edge in the graph has a weight that represents the distance between two nodes.
+
+Applying the Toll Rate:
+
+The toll is calculated by multiplying the total distance by a predefined toll rate per kilometer. This rate is a constant value that represents the cost per unit distance traveled.
+
+Detailed Steps
+
+Graph Representation: The graph is represented using nodes (points) and edges (connections between points). Each edge has an associated weight that indicates the distance between the connected nodes.
+
+Dijkstra’s Algorithm:
+- Initialize the distance to the start node as 0 and to all other nodes as infinity.
+- Use a priority queue to explore nodes, starting from the start node.
+- For each node, update the distance to its neighbors if a shorter path is found.
+- Continue this process until the end node is reached, ensuring the shortest path is found.
+
+Path and Distance Calculation: The shortest path is stored as a sequence of nodes. The total distance is calculated by summing the weights of the edges along this path.
+
+Toll Calculation: The toll is calculated using the formula:
+Toll = Total Distance × Toll Rate per Kilometer
+
+For example, if the total distance is 17 kilometers and the toll rate is 0.5 units per kilometer, the toll would be:
+Toll = 17 × 0.5 = 8.5 units
+
+Example
+
+Let’s say you want to calculate the toll from point A to point O:
+
+Shortest Path: Using Dijkstra’s algorithm, the shortest path might be ['A', 'E', 'F', 'G', 'I', 'O'].
+Total Distance: Sum the weights of the edges along this path:
+- A to E: 5
+- E to F: 2
+- F to G: 2
+- G to I: 2
+- I to O: 6
+- Total distance = 5 + 2 + 2 + 2 + 6 = 17 kilometers
+
+Toll Calculation: If the toll rate is 0.5 units per kilometer:
+Toll = 17 × 0.5 = 8.5 units
