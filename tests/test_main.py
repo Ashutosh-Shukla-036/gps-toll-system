@@ -1,14 +1,31 @@
-import networkx as nx
+import unittest
 from main import dijkstra, calculate_toll, create_graph
 
-def test_dijkstra():
-    G = create_graph()
-    path, cost = dijkstra(G, 'A', 'E')
-    assert path == ['A', 'C', 'D', 'E']
-    assert cost == 12
+class TestDijkstra(unittest.TestCase):
+    def test_dijkstra(self):
+        # Create the graph
+        G = create_graph()
 
-    toll = calculate_toll(path, G)
-    assert toll == 6
+        # Define the expected paths and cost based on the graph structure
+        expected_paths = [
+            ['A', 'C', 'F', 'G', 'I', 'O'],
+            ['A', 'E', 'F', 'G', 'I', 'O']
+        ]
+        expected_cost = 17  # Adjusted based on your graph weights
 
-test_dijkstra()
-print("All tests passed!")
+        # Run Dijkstra's algorithm
+        path, cost = dijkstra(G, 'A', 'O')
+
+        # Assert the cost
+        self.assertEqual(cost, expected_cost, f"Expected cost: {expected_cost}, but got: {cost}")
+
+        # Assert the path is one of the expected paths
+        self.assertIn(path, expected_paths, f"Expected path to be one of {expected_paths}, but got: {path}")
+
+        # Calculate toll and assert the expected toll
+        toll = calculate_toll(path, G)
+        expected_toll = expected_cost * 0.5  # Assuming toll rate per km is 0.5
+        self.assertEqual(toll, expected_toll, f"Expected toll: {expected_toll}, but got: {toll}")
+
+if __name__ == '__main__':
+    unittest.main()
