@@ -32,3 +32,6 @@ This project simulates a GPS toll-based system using Python.
 - Enter the start and end points.
 - Click "Calculate Toll" to find the path and calculate the toll.
 
+
+[Watch the video explanation of the project](https://drive.google.com/file/d/1y-FOixx9HH8GGTLeXKMPOt80aMDTgIpt/view?usp=sharing)
+
