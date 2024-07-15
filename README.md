@@ -32,6 +32,3 @@ This project simulates a GPS toll-based system using Python.
 - Enter the start and end points.
 - Click "Calculate Toll" to find the path and calculate the toll.
 
-## License
-
-This project is licensed under the MIT License.
